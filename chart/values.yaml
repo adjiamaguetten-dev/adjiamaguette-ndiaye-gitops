@@ -1,6 +1,6 @@
 image:
   repository: adjiamaguette23/adjiamaguette-ndiaye-app
-  tag: v99
+  tag: v1
 
 replicaCount: 2
 
