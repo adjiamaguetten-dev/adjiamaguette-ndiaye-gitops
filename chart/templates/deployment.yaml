@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adjiamaguette-ndiaye
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: adjiamaguette-ndiaye
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: adjiamaguette-ndiaye
+  template:
+    metadata:
+      labels:
+        app: adjiamaguette-ndiaye
+    spec:
+      containers:
+        - name: adjiamaguette-ndiaye-app
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 8080
